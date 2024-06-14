@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 export default function SearchBox() {
     const [search, setSearch] = useState("");
     const router = useRouter();
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         router.push(`/search/${search}`)
     };

@@ -3,7 +3,21 @@ import Link from 'next/link'
 import React from 'react'
 import { FiThumbsUp } from 'react-icons/fi'
 
-export default function Cards({ res }) {
+interface CardsProps {
+  res: {
+    id: string;
+    backdrop_path?: string;
+    poster_path?: string;
+    overview: string;
+    original_title?: string;
+    name?: string;
+    release_date?: string;
+    first_air_date?: string;
+    vote_count: number;
+  };
+}
+
+export default function Cards({ res }: CardsProps) {
     return (
         <div className="cursor-pointer sm:border sm:border-slate-400 sm:m-2 p-2">
             <Link href={`/movie/${res.id}`}>
