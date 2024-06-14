@@ -1,4 +1,5 @@
 import Results from "./components/Results";
+import SignUp from "./components/SignUp";
 const API_KEY = process.env.API_KEY;
 
 async function getData(searchParams: { genre: string; }) {
@@ -20,6 +21,7 @@ export default async function Home({ searchParams }: { searchParams: { genre: st
   return (
     <div className='max-w-6xl mx-auto p-3 space-y-4'>
       <h1 className='text-2xl text-amber-500 font-medium'>Home</h1>
+      <SignUp />
       <div>
         <Results result={data} />
       </div>

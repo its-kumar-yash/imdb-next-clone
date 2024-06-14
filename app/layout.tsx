@@ -6,6 +6,7 @@ import Providers from "./Providers";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
 import { Suspense } from "react";
+import SessionWrapper from "./components/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,17 +21,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Suspense>
-        <Providers>
-          <Header />
-          <Navbar />
-          <SearchBox />
-          {children}
-        </Providers>
-        </Suspense>
-      </body>
-    </html>
+    <SessionWrapper>
+
+      <html lang="en">
+        <body className={inter.className}>
+          <Suspense>
+            <Providers>
+              <Header />
+              <Navbar />
+              <SearchBox />
+              {children}
+            </Providers>
+          </Suspense>
+        </body>
+      </html>
+    </SessionWrapper>
   );
 }
