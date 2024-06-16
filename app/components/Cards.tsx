@@ -1,20 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FiThumbsUp } from 'react-icons/fi'
+import { FiThumbsUp, FiBookmark } from 'react-icons/fi'
 
 interface CardsProps {
-  res: {
-    id: string;
-    backdrop_path?: string;
-    poster_path?: string;
-    overview: string;
-    original_title?: string;
-    name?: string;
-    release_date?: string;
-    first_air_date?: string;
-    vote_count: number;
-  };
+    res: {
+        id: string;
+        backdrop_path?: string;
+        poster_path?: string;
+        overview: string;
+        original_title?: string;
+        name?: string;
+        release_date?: string;
+        first_air_date?: string;
+        vote_count: number;
+    };
 }
 
 export default function Cards({ res }: CardsProps) {
@@ -32,6 +32,10 @@ export default function Cards({ res }: CardsProps) {
                     </p>
                 </div>
             </Link>
+            <button className="mt-2 flex items-center text-blue-500">
+                <FiBookmark className="h-5 mr-1" />
+                Bookmark
+            </button>
         </div>
     )
 }

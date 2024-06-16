@@ -4,6 +4,7 @@ import { AiFillHome } from 'react-icons/ai'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import Link from 'next/link'
 import DarkModeSwitch from './DarkModeSwitch'
+import DashboardWrapper from './DashboardWrapper'
 
 
 
@@ -13,6 +14,7 @@ function Header() {
       <div className='flex gap-4'>
         <MenuItem title="home" address="/" Icon={AiFillHome} />
         <MenuItem title="about" address="/about" Icon={BsFillInfoCircleFill} />
+        <DashboardWrapper />
       </div>
       <div className='flex items-center gap-4'>
         <DarkModeSwitch/>

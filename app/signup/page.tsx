@@ -1,13 +1,19 @@
 "use client"
 
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Image from 'next/image';
 
-const SignUp = () => {
+export default function Page() {
     const { data: session } = useSession();
+    const router = useRouter();
+
+    const handleGoHome = () => {
+        router.push('/');
+    };
 
     return (
-        <>
+        <div className='max-w-6xl mx-auto p-3 space-y-4'>
             {session ? (
                 <>
                     <Image src={session.user?.image as string} className="rounded-full h-20 w-20" alt="User profile picture" width={80} height={80} />
@@ -16,7 +22,7 @@ const SignUp = () => {
                         <h1 className="text-2xl font-semibold">{session.user?.email}</h1>
                     </div>
                     <div className="flex space-x-5">
-                        <button className="border border-red-500 rounded-lg px-5 py-1" onClick={() => signOut()}>SignOut</button>
+                        <button className="border border-blue-500 rounded-lg px-5 py-1" onClick={handleGoHome}>Go Home</button>
                     </div>
                 </>
             ) : (
@@ -29,8 +35,6 @@ const SignUp = () => {
                     </div>
                 </>
             )}
-        </>
+        </div>
     )
 }
-
-export default SignUp;
