@@ -1,9 +1,11 @@
-import React from 'react'
+import Image from 'next/image';
 
-export default function loading() {
-  return (
-    <div className='flex justify-center mt-1'>
-      <img className='h-52' src='./spinner.svg' alt='loading...'/>
-    </div>
-  )
+const Loading = () => {
+    return (
+        <div>
+            <Image src="/loading.gif" alt="Loading" width={50} height={50} />
+        </div>
+    );
 }
+
+export default Loading;
