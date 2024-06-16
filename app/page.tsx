@@ -20,8 +20,8 @@ export default async function Home({ searchParams }: { searchParams: { genre: st
   
   return (
     <div className='max-w-6xl mx-auto p-3 space-y-4'>
-      <h1 className='text-2xl text-amber-500 font-medium'>Home</h1>
       <SignUp />
+      <h1 className='text-2xl text-amber-500 font-medium'>Home</h1>
       <div>
         <Results result={data} />
       </div>
