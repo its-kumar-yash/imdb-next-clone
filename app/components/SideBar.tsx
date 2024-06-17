@@ -22,6 +22,7 @@ const SideBar = () => {
                     className="rounded-full"
                     width={80}
                     height={80}
+                    priority={false}
                 />
                 <h1 className="mt-2 text-xl font-semibold">{user?.name}</h1>
                 <p className="text-sm">{user?.email}</p>
